@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    app: {{ .Values.fr24AppName | default "fr24feeder" }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.fr24ExposedSvc | default "80" }}
+      targetPort: 8754
+

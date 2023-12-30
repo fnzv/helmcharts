@@ -1,0 +1,27 @@
+
+# fr24feeder key taken from CLI signup wizard or asked directly to fr24 support
+fr24Key: "xxx"
+
+
+# Application and container name 
+fr24AppName: fr24feeder
+
+# Internal fr24feeder service port for stats web page
+fr24ExposedSvc: 80
+
+# Ingress settings for FlightRadar24 stats web page
+ingress:
+  enabled: false
+  hostname: fr24feeder.ingress.local
+
+# Namespace
+namespace: "default"
+
+# fr24 BeastHost endpoint e.g. dump1090 (by default uses port 30001)
+fr24BeastHost: "dump1090-beast"
+
+# fr24feeder logging
+fr24VerboseLogging: "true"
+
+# Host and internal pod mounted USB device for RTL-SDR messages gathering
+fr24usbPath: "/dev/bus/usb"
