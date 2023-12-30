@@ -1,5 +1,5 @@
 apiVersion: v2
 name: dump1090
 description: A Helm chart for deploying dump1090 for ADB-S feeds reception
-version: 0.1.0
+version: 0.1.1
 
