@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.service.beast | default "dump1090-beast" }}
 spec:
   selector:
-    app: {{ .Values.service.beast | default "dump1090-beast" }}
+    app: {{ .Values.dump1090AppName | default "dump1090" }}
   ports:
     - protocol: TCP
       port: {{ .Values.dump1090ExposedSvc | default "30005" }}
