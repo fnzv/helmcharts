@@ -7,6 +7,9 @@ dump1090AppName: dump1090
 # Internal service port for stats web page
 dump1090ExposedSvc: 30005
 
+service:
+  beast: "dump1090-beast"
+  http: "dump1090"
 # Ingress settings for FlightRadar24 stats web page
 ingress:
   enabled: false
