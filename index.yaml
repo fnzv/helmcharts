@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   fr24feeder-chart:
   - apiVersion: v2
+    created: "2023-12-30T21:31:32.805935326Z"
+    description: A Helm chart for deploying fr24feeder
+    digest: 1c74f358550fb42f098c37695eb44b97ffb27f76b6a416228607830ebbf3fef6
+    name: fr24feeder-chart
+    urls:
+    - https://github.com/fnzv/helmcharts/releases/download/fr24feeder-chart-0.1.1/fr24feeder-chart-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     created: "2023-12-30T21:16:02.535081608Z"
     description: A Helm chart for deploying fr24feeder
     digest: 32ecf73a14e37530843d0ff76834643dc8392b8da61320da042ba0af9f973256
@@ -9,4 +17,4 @@ entries:
     urls:
     - https://github.com/fnzv/helmcharts/releases/download/fr24feeder-chart-0.1.0/fr24feeder-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-30T21:16:02.535092027Z"
+generated: "2023-12-30T21:31:32.805947408Z"
