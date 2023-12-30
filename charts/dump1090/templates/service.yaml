@@ -19,6 +19,6 @@ spec:
     app: {{ .Values.dump1090AppName | default "dump1090" }}
   ports:
     - protocol: TCP
-      port: {{ .Values.dump1090ExposedSvc | default "80" }}
+      port: {{ .Values.dump1090ExposedSvcHttp | default "80" }}
       targetPort: 8080
 

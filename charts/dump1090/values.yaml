@@ -6,6 +6,7 @@ dump1090AppName: dump1090
 
 # Internal service port for stats web page
 dump1090ExposedSvc: 30005
+dump1090ExposedSvcHttp: 80
 
 service:
   beast: "dump1090-beast"
