@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Values.service.beast | default "dump1090-beast" }}
 spec:
   selector:
     app: {{ .Values.service.beast | default "dump1090-beast" }}
