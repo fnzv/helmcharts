@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    app: {{ .Values.dump1090AppName | default "dump1090-beast" }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.dump1090ExposedSvc | default "30005" }}
+      targetPort: 30005
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    app: {{ .Values.dump1090AppName | default "dump1090" }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.dump1090ExposedSvc | default "80" }}
+      targetPort: 8080
+

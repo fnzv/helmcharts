@@ -1,0 +1,19 @@
+
+
+
+# Application and container name 
+dump1090AppName: dump1090
+
+# Internal service port for stats web page
+dump1090ExposedSvc: 80
+
+# Ingress settings for FlightRadar24 stats web page
+ingress:
+  enabled: false
+  hostname: dump1090.ingress.local
+
+# Namespace
+namespace: "default"
+
+# Host and internal pod mounted USB device for RTL-SDR messages gathering
+dump1090usbPath: "/dev/bus/usb"

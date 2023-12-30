@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount | default 1 }}
+  selector:
+    matchLabels:
+      app: {{ .Values.dump1090AppName | default "dump1090" }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.dump1090AppName | default "dump1090" }}
+    spec:
+      containers:
+      - name: {{ .Values.dump1090AppName | default "dump1090" }}
+        image: fnzv/dump1090:latest
+        ports:
+         - containerPort: 8080
+        securityContext:
+          privileged: true  # Allow the container to access devices
+        volumeMounts:
+        - name: usb-volume
+          mountPath: {{ .Values.dump1090usbPath | default "/dev/bus/usb" }}
+      volumes:
+      - name: usb-volume
+        hostPath:
+          path: {{ .Values.dump1090usbPath | default "/dev/bus/usb" }}
+
