@@ -13,10 +13,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: "dump1090-http"
+  name: {{ .Values.dump1090AppName | default "dump1090" }}
 spec:
   selector:
-    app: "dump1090-http"
+    app: {{ .Values.dump1090AppName | default "dump1090" }}
   ports:
     - protocol: TCP
       port: {{ .Values.dump1090ExposedSvcHttp | default "80" }}
