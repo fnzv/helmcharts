@@ -11,7 +11,7 @@ spec:
       paths:
       - backend:
           service:
-            name: {{ .Values.dump1090AppName | default "dump1090" }}
+            name: "dump1090-http"
             port:
               number: 80
         path: /
