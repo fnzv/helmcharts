@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount | default 1 }}
+  selector:
+    matchLabels:
+      app: {{ .Values.fr24AppName | default "fr24feeder" }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.fr24AppName | default "fr24feeder" }}
+    spec:
+      containers:
+      - name: {{ .Values.fr24AppName | default "fr24feeder" }}
+        image: ghcr.io/sdr-enthusiasts/docker-flightradar24:latest
+        ports:
+         - containerPort: 8754
+        env:
+        - name: FR24KEY
+          value: {{ quote .Values.fr24Key | default "xxxx" }}
+        - name: BEASTHOST
+          value: {{ quote .Values.fr24BeastHost | default "dump1090-beast" }}
+        - name: VERBOSE_LOGGING
+          value: {{ quote .Values.fr24VerboseLogging | default "true" }}
+        securityContext:
+          privileged: true  # Allow the container to access devices
+        volumeMounts:
+        - name: usb-volume
+          mountPath: {{ .Values.fr24usbPath | default "/dev/bus/usb" }}
+      volumes:
+      - name: usb-volume
+        hostPath:
+          path: {{ .Values.fr24usbPath | default "/dev/bus/usb" }}
+
