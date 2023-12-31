@@ -21,3 +21,18 @@ namespace: "default"
 
 # Host and internal pod mounted USB device for RTL-SDR messages gathering
 dump1090usbPath: "/dev/bus/usb"
+
+dump1090-exporter:
+  name: "dump1090-exporter"
+  enabled: true
+  image: "fnzv/dump1090-exporter"
+  port: 9105
+  dump1090Url: "http://dump1090/data"
+  exporterHost: "0.0.0.0"
+  aircraftInterval: "10"
+  statsInterval: "60"
+  receiverInterval: "10"
+  receiverLatitude: "123.123"
+  receiverLongitude: "123.123"
+  logLevel: "info"
+
