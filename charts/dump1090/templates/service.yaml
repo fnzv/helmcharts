@@ -21,7 +21,7 @@ spec:
     - protocol: TCP
       port: {{ .Values.dump1090ExposedSvcHttp | default "80" }}
       targetPort: 8080
-{{- if .Values.metrics.enabled }}
+{{- if .Values.dump1090-exporter.enabled }}
 ---
 apiVersion: v1
 kind: Service
