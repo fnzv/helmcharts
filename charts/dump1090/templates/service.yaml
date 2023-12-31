@@ -26,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ index .Values "dump1090-exporter" "name" }}
+  name: {{ index .Values "dump1090exporter" "name" }}
 spec:
   selector:
-    app: {{ index .Values "dump1090-exporter" "name" }}
+    app: {{ index .Values "dump1090exporter" "name" }}
   ports:
     - protocol: TCP
       port: 80

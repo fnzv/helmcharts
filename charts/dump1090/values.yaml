@@ -22,7 +22,7 @@ namespace: "default"
 # Host and internal pod mounted USB device for RTL-SDR messages gathering
 dump1090usbPath: "/dev/bus/usb"
 
-dump1090-exporter:
+dump1090exporter:
   name: "dump1090-exporter"
   enabled: true
   image: "fnzv/dump1090-exporter"

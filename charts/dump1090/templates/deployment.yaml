@@ -28,42 +28,42 @@ spec:
           path: {{ .Values.dump1090usbPath | default "/dev/bus/usb" }}
 
 ---
-{{- if .Values.dump1090-exporter.enabled }}
+{{- if .Values.dump1090exporter.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.dump1090-exporter.name | default "dump1090-exporter" }}
+  name: {{ .Values.dump1090exporter.name | default "dump1090exporter" }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.dump1090-exporter.name | default "dump1090-exporter" }}
+      app: {{ .Values.dump1090exporter.name | default "dump1090exporter" }}
   template:
     metadata:
       labels:
-        app: {{ .Values.dump1090-exporter.name | default "dump1090-exporter" }}
+        app: {{ .Values.dump1090exporter.name | default "dump1090exporter" }}
     spec:
       containers:
-      - name: {{ .Values.dump1090-exporter.name | default "dump1090-exporter" }}
-        image: {{ .Values.dump1090-exporter.image }}
+      - name: {{ .Values.dump1090exporter.name | default "dump1090exporter" }}
+        image: {{ .Values.dump1090exporter.image }}
         ports:
-        - containerPort: {{ .Values.dump1090-exporter.port }}
+        - containerPort: {{ .Values.dump1090exporter.port }}
         env:
         - name: DUMP1090_URL
-          value: {{ .Values.dump1090-exporter.dump1090Url | quote }}
+          value: {{ .Values.dump1090exporter.dump1090Url | quote }}
         - name: EXPORTER_HOST
-          value: {{ .Values.dump1090-exporter.exporterHost | quote }}
+          value: {{ .Values.dump1090exporter.exporterHost | quote }}
         - name: AIRCRAFT_INTERVAL
-          value: {{ .Values.dump1090-exporter.aircraftInterval | quote }}
+          value: {{ .Values.dump1090exporter.aircraftInterval | quote }}
         - name: STATS_INTERVAL
-          value: {{ .Values.dump1090-exporter.statsInterval | quote }}
+          value: {{ .Values.dump1090exporter.statsInterval | quote }}
         - name: RECEIVER_INTERVAL
-          value: {{ .Values.dump1090-exporter.receiverInterval | quote }}
+          value: {{ .Values.dump1090exporter.receiverInterval | quote }}
         - name: RECEIVER_LATITUDE
-          value: {{ .Values.dump1090-exporter.receiverLatitude | quote }}
+          value: {{ .Values.dump1090exporter.receiverLatitude | quote }}
         - name: RECEIVER_LONGITUDE
-          value: {{ .Values.dump1090-exporter.receiverLongitude | quote }}
+          value: {{ .Values.dump1090exporter.receiverLongitude | quote }}
         - name: LOG_LEVEL
-          value: {{ .Values.dump1090-exporter.logLevel | quote }}
+          value: {{ .Values.dump1090exporter.logLevel | quote }}
 {{- end }}
 
