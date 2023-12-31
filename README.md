@@ -1,5 +1,5 @@
 # helm-charts
-
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/fnzv)](https://artifacthub.io/packages/search?repo=fnzv)
 ## Usage
 
 1. Add or update a Helm chart: push your source code of Helm chart under `charts/<your chart>`
