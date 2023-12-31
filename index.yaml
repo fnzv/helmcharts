@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   dump1090:
   - apiVersion: v2
+    created: "2023-12-31T12:07:49.967733643Z"
+    description: A Helm chart for deploying dump1090 for ADB-S feeds reception and
+      metrics exporter
+    digest: a9bda64bcc8b2d182d8cfea3460eddb070cdab62966e250f997f2a63addf78db
+    name: dump1090
+    urls:
+    - https://github.com/fnzv/helmcharts/releases/download/dump1090-0.2.1/dump1090-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     created: "2023-12-31T12:03:43.814947999Z"
     description: A Helm chart for deploying dump1090 for ADB-S feeds reception and
       metrics exporter
@@ -129,4 +138,4 @@ entries:
     urls:
     - https://github.com/fnzv/helmcharts/releases/download/fr24feeder-chart-0.1.0/fr24feeder-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-31T12:03:43.815009654Z"
+generated: "2023-12-31T12:07:49.967793654Z"
