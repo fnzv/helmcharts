@@ -21,18 +21,18 @@ spec:
     - protocol: TCP
       port: {{ .Values.dump1090ExposedSvcHttp | default "80" }}
       targetPort: 8080
-{{- if .Values.dump1090-exporter.enabled }}
+{{ if .Values.dump1090-exporter.enabled }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ index .Values "dump1090exporter" "name" }}
+  name: {{ default "dump1090-exporter" .Values.dump1090exporter.name }}
 spec:
   selector:
-    app: {{ index .Values "dump1090exporter" "name" }}
+    app: {{ default "dump1090-exporter" .Values.dump1090exporter.name }}
   ports:
     - protocol: TCP
       port: 80
       targetPort: 9105
-{{- end }}
+{{ end }}
 
