@@ -23,7 +23,7 @@ namespace: "default"
 dump1090usbPath: "/dev/bus/usb"
 
 dump1090exporter:
-  name: "dump1090-exporter"
+  name: "dump1090exporter"
   enabled: true
   image: "fnzv/dump1090-exporter"
   port: 9105
