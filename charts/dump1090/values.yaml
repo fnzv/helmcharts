@@ -24,8 +24,8 @@ dump1090usbPath: "/dev/bus/usb"
 
 dump1090exporter:
   name: "dump1090exporter"
-  enabled: true
-  image: "fnzv/dump1090-exporter"
+  enabled: false
+  image: "fnzv/dump1090_exporter"
   port: 9105
   dump1090Url: "http://dump1090/data"
   exporterHost: "0.0.0.0"
