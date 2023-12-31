@@ -13,6 +13,7 @@
     ```
     helm search repo fnzv
     NAME                    CHART VERSION   APP VERSION     DESCRIPTION
+    fnzv/dump1090           0.2.7                           A Helm chart for deploying dump1090 for ADB-S f...
     fnzv/example            0.1.0           1.16.0          A Helm chart for Kubernetes
     fnzv/fr24feeder         0.1.2                           A Helm chart for deploying fr24feeder
     ```
