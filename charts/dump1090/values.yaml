@@ -15,6 +15,9 @@ service:
 ingress:
   enabled: false
   hostname: dump1090.ingress.local
+  # Additional ingress annotations
+  annotations: {}
+
 
 # Namespace
 namespace: "default"
