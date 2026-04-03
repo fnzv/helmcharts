@@ -4,6 +4,10 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Values.namespace | default "default" }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   rules:
   - host: {{ .Values.ingress.hostname }}
